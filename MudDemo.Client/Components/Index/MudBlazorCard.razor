@@ -1,0 +1,57 @@
+@inherits MudComponentBase
+
+<MudElement @attributes="@UserAttributes"
+            Class="@Classname"
+            Style="@Style">
+    <MudPaper Class="d-flex flex-column justify-space-between pa-4"
+              Elevation="2">
+        <div class="align-left d-flex flex-column justify-center">
+            <MudIcon Class="mb-2"
+                     Color="Color.Primary"
+                     Icon="@Icons.Filled.Api"
+                     Style="font-size: 70px" />
+            <MudText Class="my-1"
+                     Typo="Typo.h5">
+                Select spare part:
+            </MudText>
+            <MudPaper Width="300px" Elevation="0">
+                <MudTreeView @bind-SelectedValue="SelectedValue" Hover="true">
+                    <MudTreeViewItem @bind-Expanded="@folderOneExpanded" Value="@("Foot")" Icon="@(folderOneExpanded ? Icons.Custom.Uncategorized.FolderOpen : Icons.Custom.Uncategorized.Folder)">
+                        <MudTreeViewItem Value="@("1344144-243")" Icon="@Icons.Filled.Settings" />
+                        <MudTreeViewItem Value="@("12723983-23")" Icon="@Icons.Filled.Settings" />
+                    </MudTreeViewItem>
+                    <MudTreeViewItem @bind-Expanded="@folderTwoExpanded" Value="@("Arm")" Icon="@(folderTwoExpanded ? Icons.Custom.Uncategorized.FolderOpen : Icons.Custom.Uncategorized.Folder)">
+                        <MudTreeViewItem Value="@("1272393-23")" Icon="@Icons.Filled.Settings" />
+                    </MudTreeViewItem>
+                    <MudTreeViewItem @bind-Expanded="@folderThreeExpanded" Value="@("Hand")" Icon="@(folderThreeExpanded ? Icons.Custom.Uncategorized.FolderOpen : Icons.Custom.Uncategorized.Folder)">
+                        <MudTreeViewItem Value="@("12723983-23")" Icon="@Icons.Filled.Settings" />
+                    </MudTreeViewItem>
+
+                </MudTreeView>
+            </MudPaper>
+            @code {
+            string SelectedValue { get; set; }
+        bool folderOneExpanded;
+        bool folderTwoExpanded;
+        bool folderThreeExpanded;
+            }
+
+
+        </div>
+        <div class="d-flex justify-end">
+            <MudButton Color="Color.Primary"
+                       Link="https://mudblazor.com"
+                       Variant="Variant.Filled"
+                       Size="Size.Small">
+                See more
+            </MudButton>
+        </div>
+    </MudPaper>
+    <MudPaper Class="d-flex flex-column justify-space-between pa-4"
+              Elevation="2">
+        <MudText Class="my-1"
+                     Typo="Typo.h5">
+                Select spare part:
+            </MudText>
+    </MudPaper>
+</MudElement>
