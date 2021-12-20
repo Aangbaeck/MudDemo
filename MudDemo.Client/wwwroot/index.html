@@ -35,23 +35,28 @@
     <script src="_content/MudBlazor/MudBlazor.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="js/apex-chart-wrapper.js"></script>
+    <script src="js/three.module.js"></script>
+    <script src="js/three.min.js"></script>
+    <script src="js/scene.js"></script>
+
 
     <script>
 
         var themeManager = JSON.parse(window.localStorage.getItem("themeManager"));
         var paths = document.getElementById("mud-icon").children;
-        
-        if(themeManager.IsDarkMode) {
+
+        if (themeManager.IsDarkMode) {
             document.getElementById("main-container").setAttribute("style", "height:100%;width:100%;margin:0;position:fixed;background-color: #151b22");
         } else {
             document.getElementById("main-container").setAttribute("style", "height:100%;width:100%;margin:0;position:fixed;");
         }
-        
-        for(var i = 0; i < paths.length; i++) {
+
+        for (var i = 0; i < paths.length; i++) {
             paths[i].setAttribute("fill", themeManager.PrimaryColor)
         }
-        
+
     </script>
+
 
 </body>
 

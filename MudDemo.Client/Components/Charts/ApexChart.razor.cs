@@ -23,5 +23,8 @@ public partial class ApexChart<TSeries, TCategory> : MudComponentBase
             return;
 
         if (firstRender) await JsRuntime.InvokeVoidAsync("apex_wrapper.renderApexChart", ChartId, ChartOptions);
+
+        
+
     }
 }
